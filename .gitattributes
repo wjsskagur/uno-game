@@ -1,0 +1,50 @@
+# 줄바꿈 정책
+# Windows(CRLF) ↔ Unix(LF) 혼용 문제 방지
+# text=auto → Git이 텍스트 파일 자동 감지 후 체크아웃 시 OS 줄바꿈으로 변환
+* text=auto eol=lf
+
+# ─── 소스 코드 ────────────────────────────────────────
+*.java        text eol=lf
+*.kt          text eol=lf
+*.groovy      text eol=lf
+*.gradle      text eol=lf
+*.properties  text eol=lf
+*.yml         text eol=lf
+*.yaml        text eol=lf
+*.xml         text eol=lf
+
+*.ts          text eol=lf
+*.tsx         text eol=lf
+*.js          text eol=lf
+*.jsx         text eol=lf
+*.json        text eol=lf
+*.css         text eol=lf
+*.html        text eol=lf
+*.md          text eol=lf
+
+# ─── 실행 스크립트 ─────────────────────────────────────
+# gradlew는 Unix 실행 권한 + LF 강제 (Windows에서 CRLF로 바뀌면 실행 불가)
+gradlew       text eol=lf
+*.sh          text eol=lf
+
+# Windows 배치 파일은 CRLF 유지
+*.bat         text eol=crlf
+*.cmd         text eol=crlf
+gradlew.bat   text eol=crlf
+
+# ─── 바이너리 파일 ─────────────────────────────────────
+# binary 지정 → diff/merge 시도 안 함, 줄바꿈 변환 안 함
+*.jar         binary
+*.class       binary
+*.png         binary
+*.jpg         binary
+*.jpeg        binary
+*.gif         binary
+*.ico         binary
+*.svg         text eol=lf
+*.woff        binary
+*.woff2       binary
+*.ttf         binary
+*.eot         binary
+*.zip         binary
+*.gz          binary
